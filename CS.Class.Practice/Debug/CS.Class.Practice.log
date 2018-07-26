@@ -1,3 +1,4 @@
-﻿  WardPatient.cpp
+﻿  Source.cpp
+\\vdi-shares.net.ualr.edu\uemprofiles\clsmith12\documents\practice_vs\c.smith.2376.class.practice\cs.class.practice\source.cpp(28): warning C4305: 'argument': truncation from 'double' to 'float'
   CS.Class.Practice.vcxproj -> \\vdi-shares.net.ualr.edu\UEMProfiles\clsmith12\Documents\Practice_VS\C.Smith.2376.Class.Practice\CS.Class.Practice\Debug\CS.Class.Practice.exe
   CS.Class.Practice.vcxproj -> \\vdi-shares.net.ualr.edu\UEMProfiles\clsmith12\Documents\Practice_VS\C.Smith.2376.Class.Practice\CS.Class.Practice\Debug\CS.Class.Practice.pdb (Full PDB)

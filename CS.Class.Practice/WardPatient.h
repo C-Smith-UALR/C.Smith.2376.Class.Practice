@@ -7,7 +7,26 @@ class WardPatient {
 
 public:
 	WardPatient(); //default constructor
+	WardPatient(std::string initFirstName, std::string initLastName, int initLastFour);   //another constructor
+
 	~WardPatient(); //destructor
+
+	float getTemp() const;		// getters
+	int getHR() const;
+	int getRR() const;
+	int getSBP() const;
+	int getDBP() const;
+	int getSats() const;
+
+	void setTemp(float);				// setters
+	void setHR(int);
+	void setRR(int);
+	void setSBP(int);
+	void setDBP(int);
+	void setSats(int);
+
+
+
 	void print() const;
 
 
