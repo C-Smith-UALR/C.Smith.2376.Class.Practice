@@ -11,19 +11,45 @@ A program that creates a "ward" of patients and obtains and displays objective d
 #include <iostream>
 #include "WardPatient.h"
 
+enum VITALS {
+	HEART_RATE,
+	RESP_RATE,
+	SYS_BP,
+	DIA_BP,
+	SATS,
+	VITAL_COUNT
+};
+
 int main() {
 
-	WardPatient patientOne;
-	WardPatient patientTwo("Bob", "White", 2644);
+	std::string fileName = "vitals.txt";
+	enum CHOICE {DISPLAY_VITALS, ADD_VITALS, CHANGE_VITALS, ABNORMAL_REPORT, QUIT};
+	//WardPatient patientOne;
+	//WardPatient patientTwo("Bob", "White", 2644);   //deleteME, early tests of class
 
-	patientOne.print();   
-	patientTwo.print();
+	//patientOne.print();   
+	//patientTwo.print();
 
-	WardPatient** ward;
-	ward = new WardPatient*[2];		// ward --> [-->   ][-->  ]
+	WardPatient*** ward;
+	ward = new WardPatient**[2];		// ward --> [-->   ][-->  ]
 	for (int i = 0; i < 2; ++i) {
-		ward[i] = new WardPatient[8];   // ward--> [-->[][][][][][][][] ]
-	}									//         [-->[][][][][][][][] ] 
+		ward[i] = new WardPatient*[8];		// ward--> [-->[*][*][*][*][*][*][*][*] ]
+		for (int j = 0; j < 8; ++j) {		//         [-->[*][*][*][*][*][*][*][*] ] 
+			ward[i][j] = new WardPatient;
+		}									
+	}	
+
+	float* tempColumn = nullptr;
+	tempColumn = new float[16];
+
+	int** vsTable = nullptr;
+	vsTable = new int*[16];
+	for (int i = 0; i < 16; ++i) {
+		vsTable[i] = new int[5];
+		for (int j = 0; j < 5; ++j) {
+			vsTable[i][j] = 0;
+		}
+	}
 
 	ward[0][0]->setTemp(98.9);
 
@@ -42,6 +68,7 @@ int main() {
 		
 	}
 	delete[] ward;
+	delete[] tempColumn;
 
 	system("PAUSE");
 
