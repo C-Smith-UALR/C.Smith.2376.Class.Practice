@@ -20,19 +20,26 @@ int main() {
 	patientTwo.print();
 
 	WardPatient** ward;
-	ward = new WardPatient*[16];
-	for (int i = 0; i < 16; ++i) {
-		ward[i] = new WardPatient;
-	}
+	ward = new WardPatient*[2];		// ward --> [-->   ][-->  ]
+	for (int i = 0; i < 2; ++i) {
+		ward[i] = new WardPatient[8];   // ward--> [-->[][][][][][][][] ]
+	}									//         [-->[][][][][][][][] ] 
 
-	ward[5]->setTemp(98.6);
-	for (int i = 0; i < 16; ++i) {
-		ward[i]->print();
+	ward[0][0]->setTemp(98.9);
+
+	for (int i = 0; i < 2; ++i) {
+		for (int j = 0; j < 8; ++j) {
+			ward[i][j]->print();
+
+		}	
 	}
 	
 
-	for (int i = 0; i < 16; ++i) {
-		delete ward[i];
+	for (int i = 0; i < 2; ++i) {
+		for (int j = 0; j < 8; ++j) {
+			delete ward[i][j];
+		}
+		
 	}
 	delete[] ward;
 
